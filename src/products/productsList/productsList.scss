@@ -1,0 +1,26 @@
+.productsList{
+  height: 360px;
+  width: 250px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5% 0;
+
+  .image{
+    width: 226px;
+    height: 210px;
+    border: 1px solid black;
+
+  }
+
+  .link{
+    color: black;
+    &:hover{
+      color: white;
+    }
+  }
+
+  .button{
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}

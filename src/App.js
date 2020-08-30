@@ -4,6 +4,7 @@ import './App.css';
 import Product from "./products/product/product";
 import ProductsList from "./products/productsList/productsList";
 import HomePage from "./homePage/homePage";
+import SignInSignUp from "./signInSignUp/signInSignUp";
 import Reviews from "./products/product/reviews/reviews";
 import {Switch,Route} from "react-router-dom";
 
@@ -16,7 +17,7 @@ function App() {
             <Route path='/productsList' component={ProductsList}/>
             <Route path='/products' component={Products}/>
             <Route path='/reviews' component={Reviews}/>
-            {/*<Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUpPage/>)}/>*/}
+            <Route path='/signInSignUp' component={SignInSignUp}/>
         </Switch>
     </div>
   );

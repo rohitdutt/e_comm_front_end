@@ -15,6 +15,9 @@ const homePage = () =>(
         <Link className="option" to="/products">
             Products
         </Link>
+        <Link className="option" to="/signInSignUp">
+            Sign In/Up
+        </Link>
         {/*<Link to="">*/}
         {/*        CONTACT*/}
         {/*</Link>*/}

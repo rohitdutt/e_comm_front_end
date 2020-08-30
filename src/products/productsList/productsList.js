@@ -9,7 +9,7 @@ const productsList =(props)=>(
                     <h1>image</h1>
                 </div>
                 <div>
-                    <h4>{props.product.itemName}</h4>
+                    <h5>{props.product.itemName}</h5>
                     <p>Rs. : {props.product.pricePerUnit}</p>
                     <Button className={"button"}>
                         <Link className={"link"} to={

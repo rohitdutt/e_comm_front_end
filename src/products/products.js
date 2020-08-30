@@ -9,21 +9,23 @@ class products extends Component {
         super(props);
         this.state = {
             products: [],
-            isLoading:true
+            isLoading:true,
         };
     }
 
 
     componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData = () =>{
         axios.get("http://localhost:8080/api/v1/product-all")
             .then((response)=>{
-                    this.setState({products:response.data,isLoading:true})
-                    console.log(this.state.products);
+                    this.setState({products:response.data})
                 },
-                this.setState({isLoading:false})
             );
-
-    }
+        this.setState({isLoading:false})
+    };
 
 
     render() {
@@ -37,14 +39,18 @@ class products extends Component {
                     </div>
                 </div>)
         }else{
-              load=(prod.map(product =>(
-                    <ProductsList key={product.productId} product={product}/>
-                ))
-              )
+            console.log(prod+"--------")
+            load=(
+              prod.map((product)=>(
+                  <ProductsList product={product}/>
+              ))
+            )
         }
         return (
-            <div>
-                {load}
+            <div className="productList">
+                {
+                    load
+                }
             </div>
         );
     }

@@ -1,11 +1,11 @@
 import React from "react";
-import signInUpImage from "../assets/signInUp.jpg";
 import "./signInSignUp.scss";
+import SignUp from "./signUp/signUp";
 
 const signInSignUp = () =>(
     <div>
         <div className={"container"}>
-            <img src={signInUpImage} alt={"signin"}/>
+            <SignUp/>
         </div>
     </div>
 )

@@ -21,7 +21,8 @@ class products extends Component {
     fetchData = () =>{
         axios.get("http://localhost:8080/api/v1/product-all")
             .then((response)=>{
-                    this.setState({products:response.data})
+                    this.setState({products:response.data,isLoading:true})
+                    console.log(response)
                 },
             );
         this.setState({isLoading:false})
@@ -39,10 +40,9 @@ class products extends Component {
                     </div>
                 </div>)
         }else{
-            console.log(prod+"--------")
             load=(
               prod.map((product)=>(
-                  <ProductsList product={product}/>
+                  <ProductsList key={product.productId} product={product}/>
               ))
             )
         }

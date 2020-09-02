@@ -1,13 +1,30 @@
 .signUp{
   text-align: center;
-  width: 500px;
+  width: 800px;
   height: 580px;
   border: 1px solid black;
   box-shadow: 4px 8px;
-  margin: 40px 0 0 300px;
+  margin: 40px 0 0 250px;
 
   h2{
     padding-top: 15px;
   }
 
+  Form{
+    width: 400px;
+  }
+
+  .form-area{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-submission{
+    width: 40%;
+    padding: 120px 0 0 60px;
+
+    p{
+      padding-top: 50px;
+    }
+  }
 }

@@ -3,18 +3,18 @@ import "./signIn.scss";
 import {Form , Col , Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
-const signUp = () =>(
+const signUp = (props) =>(
     <div className="signIn">
         <h2>Sign In</h2>
         <br/>
         <Form>
             <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Enter Your Email</Form.Label>
+                <Form.Label>Email Address</Form.Label>
                 <Form.Control type="email" placeholder="Email" required/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="It Should be Top Secret!" required/>
+                <Form.Control type="password" placeholder="Tell me your Top Secret!" required/>
             </Form.Group>
         </Form>
         <Button variant="outline-dark">Sign In</Button>

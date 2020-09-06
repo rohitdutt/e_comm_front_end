@@ -1,22 +1,15 @@
 .header {
-  height: 150px;
+  height: 130px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  background-color: #f1c5c5;
+  background-color: black;
 
   .logo{
-    width: 140px;
-    height: 100px;
-  }
-
-  .logo-container {
-    height: 100%;
-    width: 70px;
-    padding: 25px;
-    color: black;
-    justify-content: flex-start;
+    margin: 24px 0 0 50px;
+    width: 120px;
+    height: 80px;
   }
 
   .options {
@@ -30,7 +23,16 @@
     .option {
       padding: 10px 15px;
       cursor: pointer;
-      color: black;
+      color: white;
     }
+  }
+}
+
+.posters{
+  margin-top: -25px;
+  padding: 5px 48px 0 48px;
+  img{
+    width: 1200px;
+    max-height: 534px;
   }
 }

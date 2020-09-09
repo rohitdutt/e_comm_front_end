@@ -9,7 +9,7 @@ const signUp = (props) =>(
         <br/>
         <Form>
             <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email Address</Form.Label>
+                <Form.Label>Email / Mobile</Form.Label>
                 <Form.Control type="email" placeholder="Email" required/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridPassword">

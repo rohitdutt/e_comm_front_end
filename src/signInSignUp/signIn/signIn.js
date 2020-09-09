@@ -3,14 +3,14 @@ import "./signIn.scss";
 import {Form , Col , Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
-const signUp = (props) =>(
+const signIn = (props) =>(
     <div className="signIn">
         <h2>Sign In</h2>
         <br/>
         <Form>
             <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Email / Mobile</Form.Label>
-                <Form.Control type="email" placeholder="Email" required/>
+                <Form.Control type="email" placeholder="Email / Mobile" required/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Password</Form.Label>
@@ -25,4 +25,4 @@ const signUp = (props) =>(
     </div>
 );
 
-export default signUp;
+export default signIn;

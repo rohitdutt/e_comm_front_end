@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./reviews.scss";
 import Axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Reviews extends Component {
     constructor(props) {

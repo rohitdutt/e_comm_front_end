@@ -1,0 +1,13 @@
+.category{
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-category{
+  display: none;
+}
+
+.sub-category-after-click{
+  display: flex;
+  flex-direction: column;
+}

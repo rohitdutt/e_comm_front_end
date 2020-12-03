@@ -1,29 +1,34 @@
-import React from "react";
-import Button from "../../button/button";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 import "./productsList.scss";
+import Products from "../products";
+import Axios from "axios";
 
-const productsList =(props)=>(
-     <div className="productsList">
-                <div className="image">
-                    <h1>image</h1>
-                </div>
-                <div>
-                    <h5>{props.product.itemName}</h5>
-                    <p>Rs. : {props.product.pricePerUnit}</p>
-                    <Button className={"button"}>
-                        <Link className={"link"} to={
-                            {
-                                pathname:"/product",
-                                product:props.product
-                            }
-                        }>
-                            Buy Now
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-);
+const ProductsList = ({subCategoryId}) =>{
+
+    const [products , setProducts] = useState([]);
+
+    useEffect(()=>{
+        console.log(subCategoryId)
+            Axios.get(`http://localhost:8081/api/v1/product/product-sub-category/${subCategoryId}`)
+                .then(response => {
+                        console.log(response)
+                        setProducts(response.data)
+                    }
+                ).catch(error => {
+                console.log(error)
+            });
+    },[subCategoryId]);
+
+    return(
+          <div className={"productList"}>
+              {
+                  products.map( product => (
+                        <Products key={product.productId} products={product}/>
+                  ))
+              }
+          </div>
+     )
+}
 
 
-export default productsList;
+export default ProductsList;

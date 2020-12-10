@@ -19,7 +19,7 @@ const CollapsableList = () =>{
     },[]);
 
     return(
-            <div>
+            <div className={""}>
                 {
                     categories.map( category => (
                         <Category key={category.categoryId} category={category}/>

@@ -1,4 +1,14 @@
 .productList{
-  //display: flex;
-  //flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product{
+    padding: 20px;
+}
+
+.product-row{
+  display: flex;
+  flex-direction: column;
 }

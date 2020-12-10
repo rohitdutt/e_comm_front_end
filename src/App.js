@@ -9,6 +9,8 @@ import SignUp from "./signInSignUp/signUp/signUp"
 import Reviews from "./products/product/reviews/reviews";
 import {Switch,Route} from "react-router-dom";
 import {Router} from "@reach/router";
+import Navbar from "./navbar/navbar";
+import Sidebar from "./sideBar/sideBar";
 
 
 function App() {
@@ -25,9 +27,14 @@ function App() {
         {/*    <Route path='/signIn' component={SignIn}/>*/}
         {/*    <Route path='/signUp' component={SignUp}/>*/}
         {/*</Switch>*/}
+        <header>
+            <Navbar/>
+            <Sidebar/>
+        </header>
         <Router>
             <HomePage path={"/"}/>
             <ProductsList path={"/productList/:subCategoryId"}/>
+            <Product path={"/product/:productId"}/>
         </Router>
     </div>
   );

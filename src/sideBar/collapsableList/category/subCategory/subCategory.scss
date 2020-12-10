@@ -1,0 +1,21 @@
+.sub-category{
+  width: 187px;
+  height: 20%;
+}
+.sub-category button{
+  background-color: white;
+  color: black;
+  height: 30px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.sub-category button:focus{
+    outline: none;
+    border: none;
+}
+
+.sub-category button:hover{
+    font-size: 2.8vh;
+    transition-duration: 800ms;
+}
+

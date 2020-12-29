@@ -35,6 +35,8 @@ function App() {
             <HomePage path={"/"}/>
             <ProductsList path={"/productList/:subCategoryId"}/>
             <Product path={"/product/:productId"}/>
+            <SignIn path={"/signIn"}/>
+            <SignUp path={"/signUp"}/>
         </Router>
     </div>
   );

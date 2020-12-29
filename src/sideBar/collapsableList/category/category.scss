@@ -12,3 +12,16 @@
     display: flex;
     flex-direction: column;
 }
+
+.ui.compact.menu{
+    width: 100%;
+}
+
+.ui.simple.dropdown.item{
+    width: 100%;
+    display: flex;
+}
+
+.ui.simple.dropdown.item span {
+    flex: 1;
+}

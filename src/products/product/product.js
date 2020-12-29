@@ -29,14 +29,14 @@ const Product = ({productId}) => {
 
 
     useEffect(()=>{
-        Axios.get(`http://localhost:8081/api/v1/product/product-id/${productId}`)
+        Axios.get(`http://localhost:8080/api/v1/product/product-id/${productId}`)
             .then(response => {
                     console.log(response)
                 setProduct({...response.data});
                 console.log(product.productName)
                 }
             ).then(()=>{
-            Axios.get(`http://localhost:8081/api/v1/product/product-description-product-id/${productId}`)
+            Axios.get(`http://localhost:8080/api/v1/product/product-description-product-id/${productId}`)
                 .then(response => {
                         console.log(response)
                         setProductDescription({...response.data});
@@ -44,7 +44,7 @@ const Product = ({productId}) => {
                     }
                 )
         }).then(() =>{
-            Axios.get(`http://localhost:8081/api/v1/product/product-price-product-id/${productId}`)
+            Axios.get(`http://localhost:8080/api/v1/product/product-price-product-id/${productId}`)
                 .then(response => {
                         console.log(response)
                         setProductPrice({...response.data});
@@ -54,7 +54,7 @@ const Product = ({productId}) => {
         }).catch(error => {
             console.log(error)
         });
-    },[])
+    },[product.productName, productId])
 
     return(
         <div className={"product"}>

@@ -8,13 +8,23 @@ import {Link} from "@reach/router";
 const navbar = () =>{
     return(
         <div className={"navbar"}>
-            <Link to={"/"}>
+            <Link to={"/"} id={"image"}>
                 <img src={Logo} alt={"ShopEasy"}/>
             </Link>
             <SearchBar className={"search-bar"}/>
-            <button className={"navbar-button"}>Your Orders</button>
-            <button className={"navbar-button"}>Sign In/Up </button>
-            <Icon className="shopping cart"><span>Cart</span></Icon>
+                <Link to={"/"} id={"first"}>
+                    Your Orders
+                </Link>
+                <Link to={"/signIn"}>
+                   Sign In/Up
+                </Link>
+                <Link to={"/"}>
+                    <Icon className="shopping cart">
+                        <span>
+                            Cart
+                        </span>
+                    </Icon>
+                </Link>
         </div>
     )
 }

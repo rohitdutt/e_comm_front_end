@@ -9,7 +9,7 @@ const SideBar = () =>{
     const [categories , setCategories] = useState([]);
 
     useEffect(()=>{
-        Axios.get("http://localhost:8081/api/v1/product/category")
+        Axios.get("http://localhost:8080/api/v1/product/category")
             .then(response => {
                     console.log(response)
                     setCategories(response.data)
@@ -26,18 +26,6 @@ const SideBar = () =>{
                     <Category key={category.categoryId} categoryId={category.categoryId} categoryName={category.categoryName}/>
                 ))
             }
-            <button>
-                Trending
-            </button>
-            <button>
-                Best Seller
-            </button>
-            <button>
-                Offers zone
-            </button>
-            <button>
-                For You
-            </button>
         </div>
     )
 };

@@ -10,7 +10,6 @@ const Category = ({categoryId , categoryName}) =>{
     useEffect(()=>{
         Axios.get(`http://localhost:8080/api/v1/product/sub-category-category/${categoryId}`)
             .then(response => {
-                console.log(response)
                 setSubCategories(response.data)
             }).catch(error =>
             console.log(error)

@@ -8,10 +8,7 @@ const Products = ({productId , productName , sellingPrice}) => {
             <div className={"products"}>
                 <div className={"image"}/>
                 <h2>{productName}</h2>
-                <p>{sellingPrice}</p>
-                <div>
-                    ratings
-                </div>
+                <p>{sellingPrice} Rs.</p>
             </div>
         </Link>
     )

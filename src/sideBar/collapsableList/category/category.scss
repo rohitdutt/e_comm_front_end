@@ -2,15 +2,6 @@
     font-size: 3.5vh;
     width: 100%;
     height: 100%;
-    border-left: 1px solid ;
-}
-
-.category button{
-    padding: 5% 1% 0 32%;
-    height: 40px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .ui.compact.menu{
@@ -20,8 +11,7 @@
 .ui.simple.dropdown.item{
     width: 100%;
     display: flex;
-}
-
-.ui.simple.dropdown.item span {
-    flex: 1;
+    justify-content: center;
+    color: #9d0191;
+    font-size: 2vh;
 }

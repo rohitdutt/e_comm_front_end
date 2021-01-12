@@ -1,21 +1,23 @@
+.item{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.item a{
+  display: flex;
+  justify-content: center;
+  color: #9d0191;
+  font-size: 1.3vw;
+
+  &:hover{
+    color: #7579e7;
+  }
+}
+
 .sub-category{
-  width: 187px;
-  height: 20%;
-}
-.sub-category button{
-  background-color: white;
-  color: black;
-  height: 30px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-}
-.sub-category button:focus{
-    outline: none;
-    border: none;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.sub-category button:hover{
-    font-size: 2.8vh;
-    transition-duration: 800ms;
 }
-

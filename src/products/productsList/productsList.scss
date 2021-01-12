@@ -1,8 +1,5 @@
-$primary-color: color("materialize-red", "lighten-2") !default;
-.productList{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.product-list{
+  margin: 2% 0;
 }
 
 .product{
@@ -33,4 +30,19 @@ $primary-color: color("materialize-red", "lighten-2") !default;
   .indeterminate{
     background: #9d0191;
   }
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & li{
+    background-color: #9d0191;
+    color: yellow;
+  }
+}
+
+.ui-grid{
+  margin: 100px 0;
 }

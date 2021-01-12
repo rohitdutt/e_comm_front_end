@@ -17,15 +17,7 @@ const Category = ({categoryId , categoryName}) =>{
     },[categoryId]);
 
     return(
-        // <div className={"category"}>
-        //     {/*<DropdownButton id="dropdown-basic-button" title={categoryName} >*/}
-        //
-        //     {/*    {*/}
-        //     {/*        subCategories.map( subCategory =>(*/}
-        //     {/*            <Subcategory key={subCategory.subCategoryId} subCategoryId={subCategory.subCategoryId} subCategory = {subCategory.subCategory}/>*/}
-        //     {/*        ))*/}
-        //     {/*    }*/}
-        //     {/*</DropdownButton>*/}
+        <div className={"category"}>
             <div className="ui compact menu">
                 <div className="ui simple dropdown item">
                     <span>
@@ -34,17 +26,19 @@ const Category = ({categoryId , categoryName}) =>{
                         }
                     </span>
                     <i className="dropdown icon" />
-                    <div className="menu">
-                         {
-                            subCategories.map(subCategory => (
-                                <Subcategory key={subCategory.subCategoryId} subCategoryId={subCategory.subCategoryId}
-                                             subCategory={subCategory.subCategory}/>
-                            ))
-                        }
+                        <div className="menu">
+                            <div className={"sub-category"}>
+                            {
+                                    subCategories.map(subCategory => (
+                                        <Subcategory key={subCategory.subCategoryId} subCategoryId={subCategory.subCategoryId}
+                                                     subCategory={subCategory.subCategory}/>
+                                    ))
+                                }
+                        </div>
                     </div>
                 </div>
             </div>
-
+        </div>
     )
 }
 

@@ -5,11 +5,13 @@ import "./subCategory.scss";
 const Subcategory = ({subCategory,subCategoryId}) =>{
     return(
         <div className={"item"}>
+            <div className={"sub-category"}>
             <Link to={`/productList/${subCategoryId}`}>
                     {
                         subCategory
                     }
             </Link>
+            </div>
         </div>
     )
 }

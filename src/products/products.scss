@@ -1,14 +1,13 @@
 .products{
     height: 250px;
-    width: 75%;
     border: 1px solid black;
-    margin: 8% 2% 0 12%;
+    margin: 6% 8%;
     text-align: center;
     cursor: pointer;
-    transition: all .4s ease-in-out;
 
     &:hover{
         transform: scale(1.1,1.1);
+        transition: 800ms;
     }
 }
 
@@ -17,3 +16,4 @@
     height: 60%;
     border: 1px solid black;
 }
+

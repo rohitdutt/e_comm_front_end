@@ -5,6 +5,14 @@
     display: flex;
     flex-direction: row;
 
+    .brand span{
+      cursor: pointer;
+
+        &:hover{
+            color: blueviolet;
+        }
+    }
+
     .product-left{
           width: 50%;
     }
@@ -22,9 +30,10 @@
     }
 
     .cart-button{
-      width: 22%;
+      width: 20%;
       height: 65px;
       margin: 0.5% 2% 3% 30%;
-      font-size: 3.5vh;
+      font-size: 2vw;
+      cursor: pointer;
     }
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./product.scss";
 import Axios from "axios";
+import Reviews from "./reviews/reviews";
 
 const Product = ({productId}) => {
 
@@ -57,27 +58,29 @@ const Product = ({productId}) => {
     },[product.productName, productId])
 
     return(
-        <div className={"product"}>
-            <div className={"product-left"}>
-                <div className={"prod-image"}>
-                    <img src={productDescription.image} alt={"img"}/>
+        <div>
+            <div className={"product"}>
+                <div className={"product-left"}>
+                    <div className={"prod-image"}>
+                        <img src={productDescription.image} alt={"img"}/>
+                    </div>
+                    <button className={"cart-button"}>Add to cart</button>
                 </div>
-                <button className={"cart-button"}>Add to cart</button>
-            </div>
-            <div>
-                <h1>{product.productName}</h1>
-                <h3>by {product.brandId.brandName}</h3>
-                <h1>{productPrice.sellingPrice} Rs.</h1>
                 <div>
-                    <h3>Product Description</h3>
-                    <h4>name : {product.productName}</h4>
-                    <p>brand : {product.brandId.brandName}</p>
-                    <p>size : {productDescription.size}</p>
-                    <p>package contains : N/a</p>
-                    <p>description : {productDescription.description}</p>
-
+                    <h1>{product.productName}</h1>
+                    <h3 className={"brand"}>by <span>{product.brandId.brandName}</span></h3>
+                    <h1>{productPrice.sellingPrice} Rs.</h1>
+                    <div>
+                        <h3>Product Description</h3>
+                        <h4>name : {product.productName}</h4>
+                        <p>brand : {product.brandId.brandName}</p>
+                        <p>size : {productDescription.size}</p>
+                        <p>package contains : N/a</p>
+                        <p>description : {productDescription.description}</p>
+                    </div>
                 </div>
             </div>
+            <Reviews/>
         </div>
     )
 };

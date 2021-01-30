@@ -1,38 +1,22 @@
-.signUp{
+.signUp {
   text-align: center;
-  width: 800px;
-  height: 580px;
+  width: 60%;
+  height: 100%;
   border: 1px solid black;
   box-shadow: 4px 8px;
-  margin: 40px 0 0 250px;
+  margin: 1.5% 0 0 250px;
+  padding-top: 1.8%;
+}
 
-  h2{
-    padding-top: 15px;
-  }
+.form-bottom{
+  display: flex;
+  flex-direction: row;
+}
 
-  Form{
-    width: 400px;
-  }
+.waves-effect.waves-teal.btn-flat{
+    flex: 1;
+}
 
-  .form-area{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .form-submission{
-    width: 40%;
-    padding: 120px 0 0 60px;
-
-    p{
-      padding-top: 50px;
-    }
-  }
-
-  .class-red{
-    box-shadow: 0.5px 0.5px 2px 2px #ef4444;
-  }
-  .class-blue{
-    box-shadow: 0.5px 0.5px 2px 2px cornflowerblue;
-  }
-
+.form-bottom div{
+    flex: 1;
 }

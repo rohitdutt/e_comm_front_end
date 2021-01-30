@@ -1,29 +1,70 @@
-import React from "react";
-import Button from "../../button/button";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 import "./productsList.scss";
+import Products from "../products";
+import Axios from "axios";
+import Pagination from "react-js-pagination";
 
-const productsList =(props)=>(
-     <div className="productsList">
-                <div className="image">
-                    <h1>image</h1>
-                </div>
-                <div>
-                    <h5>{props.product.itemName}</h5>
-                    <p>Rs. : {props.product.pricePerUnit}</p>
-                    <Button className={"button"}>
-                        <Link className={"link"} to={
-                            {
-                                pathname:"/product",
-                                product:props.product
-                            }
-                        }>
-                            Buy Now
-                        </Link>
-                    </Button>
+
+const ProductsList = ({subCategoryId}) =>{
+
+    const [products , setProducts] = useState([]);
+    const [isLoading , setIsLoading] = useState(true);
+    const [currentPage , setCurrentPage] = useState(1);
+    const [productPerPage ] = useState(12);
+
+    useEffect (()=>{
+        const fetchProduct = async () => {
+            setIsLoading(true);
+            const res = await Axios.get(`http://localhost:8080/api/v1/product/product-sub-category/${subCategoryId}`);
+            setProducts(res.data);
+            setIsLoading(false);
+        }
+        fetchProduct().then(
+            console.log("Stop scrapping my website")
+        );
+    },[subCategoryId]);
+
+    console.log(products);
+
+    const indexOfLastProduct = currentPage * productPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+    const currentProducts = products.slice(indexOfFirstProduct , indexOfLastProduct);
+
+    if (isLoading) {
+        return (
+            <div className={"loading"}>
+                <div className="progress">
+                    <div className="indeterminate"/>
                 </div>
             </div>
-);
+        )
+    }
+
+    return(
+        <div className={"product-list"}>
+            <div className="ui grid">
+                {
+                    currentProducts.map((product) => (
+                        <div className="four wide column">
+                            <Products className={"product"} key={product.productId} productId={product.productId}
+                                      productName={product.productName}/>
+                        </div>
+                    ))
+                }
+                <Pagination
+                    className={"pagination"}
+                    activePage={currentPage}
+                    itemsCountPerPage={12}
+                    totalItemsCount={products.length}
+                    onChange={(pageNumber)=>{
+                        console.log(`active page is ${currentPage}`);
+                        setCurrentPage(pageNumber)
+                    }}
+                />
+            </div>
+        </div>
+    )
+}
 
 
-export default productsList;
+export default ProductsList;

@@ -1,0 +1,48 @@
+.navbar{
+    max-width: 100%;
+    height: 97px;
+    background-image: linear-gradient(to right ,#9d0191 10%,#7579e7 90%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.shopping.cart{
+    color: white;
+    cursor: pointer;
+}
+
+.shopping.cart span{
+    padding: 0 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.navbar img{
+    margin-left: 35%;
+    width: 100%;
+    height: auto;
+}
+
+.navbar a{
+    font-size: 1.3vw;
+    font-weight: bold;
+    width: 10%;
+    margin: 0 2% 0 2%;
+    color: #f9f9f9;
+}
+
+.navbar a:hover{
+    color: white;
+    transform: scale(1.1,1.1);
+    transition-duration: 500ms;
+}
+
+#first{
+    margin-left: 10%;
+}
+
+#image{
+    width: 14%;
+}

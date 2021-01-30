@@ -1,4 +1,22 @@
-.productList{
-  display: grid;
+.products{
+    height: 250px;
+    border: 1px solid black;
+    margin: 5% 8%;
+    text-align: center;
+    cursor: pointer;
+    width: 75%;
+    border-radius: 5%;
 
+    &:hover{
+        transform: scale(1.1,1.1);
+        transition: 800ms;
+    }
 }
+
+.image{
+    width: 100%;
+    height: 60%;
+    border-bottom: 0.5px solid black;
+    border-radius: 5%;
+}
+

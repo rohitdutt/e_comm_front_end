@@ -1,0 +1,23 @@
+.item{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.item a{
+  display: flex;
+  justify-content: center;
+  color: #9d0191;
+  font-size: 1.3vw;
+
+  &:hover{
+    color: #7579e7;
+  }
+}
+
+.sub-category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

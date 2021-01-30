@@ -1,36 +1,88 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./product.scss";
-import Button from "../../button/button";
-import {Link} from "react-router-dom";
+import Axios from "axios";
+import Reviews from "./reviews/reviews";
 
-const product = (props) => {
-        console.log(props.location.product);
+const Product = ({productId}) => {
 
-        return (
-        <div className="product">
-            <div>
-                <div className="product-image">
-                    <h2>Image is not available at this moment</h2>
+    const [product,setProduct] = useState({
+            productId:"",
+            productName:"",
+            brandId:{},
+            categoryId :{},
+            subCategoryId:{},
+            sellerId:{}
+    });
+
+    const [productPrice,setProductPrice] = useState({
+        productDetails:"",
+        pricePerUnit:0
+    });
+
+   const [productDescription , setProductDescription] = useState({
+            productDescription:"",
+            color:"",
+            description:"",
+            image:"",
+            productContains:[],
+            size:0
+   });
+
+
+    useEffect(()=>{
+        Axios.get(`http://localhost:8080/api/v1/product/product-id/${productId}`)
+            .then(response => {
+                    console.log(response)
+                setProduct({...response.data});
+                console.log(product.productName)
+                }
+            ).then(()=>{
+            Axios.get(`http://localhost:8080/api/v1/product/product-description-product-id/${productId}`)
+                .then(response => {
+                        console.log(response)
+                        setProductDescription({...response.data});
+                        console.log(product.productName)
+                    }
+                )
+        }).then(() =>{
+            Axios.get(`http://localhost:8080/api/v1/product/product-price-product-id/${productId}`)
+                .then(response => {
+                        console.log(response)
+                        setProductPrice({...response.data});
+                        console.log(product.productName)
+                    }
+                )
+        }).catch(error => {
+            console.log(error)
+        });
+    },[product.productName, productId])
+
+    return(
+        <div>
+            <div className={"product"}>
+                <div className={"product-left"}>
+                    <div className={"prod-image"}>
+                        <img src={productDescription.image} alt={"img"}/>
+                    </div>
+                    <button className={"cart-button"}>Add to cart</button>
                 </div>
-                <div className="description">
-                    <h1>{props.location.product.itemName}</h1>
-                    <p>Rs. : {props.location.product.sellPrice}</p>
-                    <p>available units : {props.location.product.availableUnit}</p>
-                    <p>Description is not available at this moment</p>
-                    <Button className={"button"}>
-                        <Link className={"link"} to={
-                            {
-                                pathname:"/reviews",
-                                productId:props.product
-                            }
-                        }>
-                            Reviews
-                        </Link>
-                    </Button>
+                <div>
+                    <h1>{product.productName}</h1>
+                    <h3 className={"brand"}>by <span>{product.brandId.brandName}</span></h3>
+                    <h1>{productPrice.sellingPrice} Rs.</h1>
+                    <div>
+                        <h3>Product Description</h3>
+                        <h4>name : {product.productName}</h4>
+                        <p>brand : {product.brandId.brandName}</p>
+                        <p>size : {productDescription.size}</p>
+                        <p>package contains : N/a</p>
+                        <p>description : {productDescription.description}</p>
+                    </div>
                 </div>
             </div>
+            <Reviews/>
         </div>
     )
-}
+};
 
-export default product;
+export default Product;

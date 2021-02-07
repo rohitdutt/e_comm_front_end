@@ -41,7 +41,7 @@ const ProductsList = ({subCategoryId}) =>{
     }
 
     return(
-        <div className={"product-list"}>
+        <div id={"product-list"} className={"product-list"}>
             <div className="ui grid">
                 {
                     currentProducts.map((product) => (
@@ -59,6 +59,7 @@ const ProductsList = ({subCategoryId}) =>{
                     onChange={(pageNumber)=>{
                         console.log(`active page is ${currentPage}`);
                         setCurrentPage(pageNumber)
+                        document.getElementById("product-list").scrollIntoView({behavior:"smooth"})
                     }}
                 />
             </div>

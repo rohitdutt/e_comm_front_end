@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+
 .products{
+    color: #282c34;
     height: 250px;
     position: relative;
     left: 11%;
@@ -10,6 +13,11 @@
     border-radius: 5%;
     border-right: 2.2px solid gray;
     border-bottom: 3.2px solid gray;
+    font-family: "Clicker Script" , cursive;
+
+    & h2{
+        font-family: "Clicker Script" , cursive;
+    }
 
     &:hover{
         transform: scale(1.1,1.1);

@@ -17,6 +17,14 @@
           width: 50%;
     }
 
+    .product-right{
+        padding-left: 5%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-left: 0.2rem solid grey;
+    }
+
     .prod-image{
       border: 1px solid black;
       margin: 3% 3% 3% 3%;

@@ -7,11 +7,12 @@
 .item a{
   display: flex;
   justify-content: center;
-  color: #9d0191;
+  color: #282c34;
   font-size: 1.3vw;
 
   &:hover{
-    color: #7579e7;
+    color: black;
+    font-weight: bold;
   }
 }
 

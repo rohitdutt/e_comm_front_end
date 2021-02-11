@@ -41,7 +41,6 @@ const Product = ({productId}) => {
                 .then(response => {
                         console.log(response)
                         setProductDescription({...response.data});
-                        console.log(product.productName)
                     }
                 )
         }).then(() =>{

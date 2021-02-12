@@ -19,9 +19,6 @@ const ProductsList = ({subCategoryId}) =>{
             setProducts(res.data);
             setIsLoading(false);
         }
-        fetchProduct().then(
-            console.log("Stop scrapping my website")
-        );
     },[subCategoryId]);
 
     console.log(products);

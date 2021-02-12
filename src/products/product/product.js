@@ -41,7 +41,6 @@ const Product = ({productId}) => {
                 .then(response => {
                         console.log(response)
                         setProductDescription({...response.data});
-                        console.log(product.productName)
                     }
                 )
         }).then(() =>{
@@ -66,18 +65,16 @@ const Product = ({productId}) => {
                     </div>
                     <button className={"cart-button"}>Add to cart</button>
                 </div>
-                <div>
+                <div className={"product-right"}>
                     <h1>{product.productName}</h1>
                     <h3 className={"brand"}>by <span>{product.brandId.brandName}</span></h3>
                     <h1>{productPrice.sellingPrice} Rs.</h1>
-                    <div>
-                        <h3>Product Description</h3>
-                        <h4>name : {product.productName}</h4>
-                        <p>brand : {product.brandId.brandName}</p>
-                        <p>size : {productDescription.size}</p>
-                        <p>package contains : N/a</p>
-                        <p>description : {productDescription.description}</p>
-                    </div>
+                    <h3>Product Description</h3>
+                    <h4>name : {product.productName}</h4>
+                    <p>brand : {product.brandId.brandName}</p>
+                    <p>size : {productDescription.size}</p>
+                    <p>package contains : N/a</p>
+                    <p>description : {productDescription.description}</p>
                 </div>
             </div>
             <Reviews/>

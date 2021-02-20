@@ -19,6 +19,7 @@ const ProductsList = ({subCategoryId}) =>{
             setProducts(res.data);
             setIsLoading(false);
         }
+        fetchProduct();
     },[subCategoryId]);
 
     console.log(products);

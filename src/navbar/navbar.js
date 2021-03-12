@@ -6,6 +6,11 @@ import Logo from "./../assets/ShopEasy.svg";
 import {Link} from "@reach/router";
 
 const navbar = () =>{
+
+    const isUserLogedIn = localStorage.getItem()
+
+    if()
+
     return(
         <div className={"navbar"}>
             <Link to={"/"} id={"image"}>
@@ -15,9 +20,7 @@ const navbar = () =>{
                 <Link to={"/"} id={"first"}>
                     Your Orders
                 </Link>
-                <Link to={"/signIn"}>
-                   Sign In/Up
-                </Link>
+
                 <Link to={"/"}>
                     <Icon className="shopping cart">
                         <span>
